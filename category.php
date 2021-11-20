@@ -16,12 +16,7 @@
     include_once('component/banner/banner.php');
     ?>
     <div class="category">
-        <hr /> Sản phẩm nổi bật
-        <hr />
-    </div>
-    <?php include('component/product-list/product-list.php'); ?>
-    <div class="category">
-        <hr /> Sản phẩm bán chạy
+        <hr /> Áo thun
         <hr />
     </div>
     <?php include('component/product-list/product-list.php'); ?>

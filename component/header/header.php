@@ -41,13 +41,13 @@
             <li class="dropdown-menu">
                 <a href="index.php">sản phẩm</a>
                 <div class="dropdown-content">
-                    <a href="#">Áo thun</a>
-                    <a href="#">Áo sơ mi</a>
-                    <a href="#">Quần jean</a>
+                    <a href="category.php">Áo thun</a>
+                    <a href="category.php">Áo sơ mi</a>
+                    <a href="category.php">Quần jean</a>
                 </div>
             </li>
-            <li><a href="index.php">giới thiệu</a></li>
-            <li><a href="index.php">liên hệ</a></li>
+            <li><a href="about-us.php">giới thiệu</a></li>
+            <li><a href="contact-us.php">liên hệ</a></li>
         </ul>
     </div>
 </div>
