@@ -32,17 +32,6 @@
                 </select>
             </td>
         </tr>
-        <tr>
-            <td><b>Product Brand:</b></td>
-            <td>
-                <select name="product-cate">
-                    <option>Select a Brand</option>
-                    <?php
-                        // code BE to get all brand
-                    ?>
-                </select>
-            </td>
-        </tr>
 
         <tr>
             <td><b>Product Image: </b> </td>
@@ -66,3 +55,25 @@
     </form>
 
 </div>
+
+
+<?php
+    // if (isset($_POST['insert-product'])) {
+    //     $product_title = $_POST['product-title'];
+    //     $product_cate = $_POST['product-cate'];
+    //     $product_price = $_POST['product-price'];
+    //     $product_desc = trim(mysqli_real_escape_string($con,$_POST['product-desc'])) ;
+        
+    //     // get image
+    //     $product_image = $_FILES['product-image']['name'];
+    //     $product_image_tmp = $_FILES['product-image']['tmp_name'];
+
+    //     //values ('$product_cate', '$product_title', '$product_price', '$product_desc', )
+
+    //     $insert_pro = mysqli_query($con, $insert_product);
+
+    //     if ($insert_pro) {
+    //         echo "<script> alert('Thêm sản phẩm thành công') </script>"
+    //     }
+    // }
+?>

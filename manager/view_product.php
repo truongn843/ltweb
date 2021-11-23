@@ -1,6 +1,6 @@
 
 <div class="view-product-box">
-    <h2>View Produc</h2>
+    <h2>Xem sản phẩm</h2>
     <div class="border-bottom"></div>
 
     <form action="" method="post">
@@ -12,14 +12,14 @@
                 <tr>
                     <th><input type="checkbox" id="checkAll">Check</th>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Image</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Ảnh</th>
                   
-                    <th>Date</th>
+                    <th>Ngày thêm</th>
                     <th>Status</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
+                    <th>Xóa</th>
+                    <th>Sửa</th>
                 </tr>
             </thead>
 
@@ -32,7 +32,7 @@
 
             <tbody>
                 <tr>
-                    <td><input type="checkbox" name="deleteAll[]" value=""></td>
+                    <td><input type="checkbox" name="deleteAll[]" value="<?php echo $row['product_id']; ?>"></td>
                     <td><?php //echo $i; ?></td>
                     <td><?php echo $row['product_title']; ?></td>
                     <td><?php echo $row['product_price']; ?></td>
@@ -42,16 +42,53 @@
                     <td>
                         <?php  ?>
                     </td>
-                    <td>Delete</td>
-                    <td>Edit</td>
+                    <td> <a href="manager.php?action=view_product&delete_product=<?php echo $row['product_id'];?>">Xóa</a> </td>
+                    <td><a href="manager.php?action=edit_product&product_id=<?php echo $row['product_id'];?>">Sửa</a></td>
                 </tr>
             </tbody>
             <?php// $i++; }  //End While loop?> 
+
+            <tr>
+                <td><input type="submit" name="delete_all" value="Remove"></td>
+            </tr>
         </table>
 
 
     </form>
 </div>
 
+<?php
+// Delete Product -->
+if (isset($_GET['delete_product'])) {
+    $delete_product = mysqli_query($con, "delete from products where product_id = '$_GET[delete_product]' ");
 
+    if ($delete_product) {
+        echo "<script> alert('Sản phẩm đã được xóa thành công!') </script>";
+
+        echo "<script> window.open('manager.php?action=view_product','_self') </script>";
+    }
+}
+
+// Remove item selected using foreach loop
+
+if (isset($_POST['deleteAll'])) {
+    $remove = $_POST['deleteAll'];
+
+    foreach ($remove as $key) {
+        $run_remove = mysqli_query($con, "delete from products where product_id='$key'");
+
+        if ($run_remove) {
+            echo "<script> alert('Sản phẩm đã được xóa thành công!') </script>";
+
+            echo "<script> window.open('manager.php?action=view_product','_self') </script>";
+        }
+        else {
+            echo "<script> alert('Mysqli failed: mysqli_error($con)') </script>";
+        }
+        
+    }
+}
+
+
+?>
 

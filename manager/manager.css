@@ -178,3 +178,11 @@ ul.dropdown-navbar-right ul li:hover {
 .view-product-box th, .view-product-box td {
     text-align: left;
 }
+
+.view-product-box input[type=submit] {
+    padding: 10px 15px;
+    background: rgba(250, 32, 32, 0.9);
+    border: 0.01px solid rgba(250, 32, 32, 0.9);
+    color: white;
+    margin-top: 10px;
+}
