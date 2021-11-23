@@ -67,7 +67,9 @@
     //     // get image
     //     $product_image = $_FILES['product-image']['name'];
     //     $product_image_tmp = $_FILES['product-image']['tmp_name'];
+            // move_uploaded_file($product_image_tmp, "anh/$product_image"); // anh là thư mục chứa ảnh
 
+            // $insert_product = "insert into products (product_cate ....";
     //     //values ('$product_cate', '$product_title', '$product_price', '$product_desc', )
 
     //     $insert_pro = mysqli_query($con, $insert_product);

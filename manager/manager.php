@@ -43,17 +43,24 @@
                 <div class="left-sidebar-box">
                     <ul class="left-sidebar-first-level">
                         <li>
-                            <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products <i class="arrow fa fa-angle-left"></i></a>
+                            <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products <i class="arrow fa fa-angle-down"></i></a>
                             <ul class ="left-sidebar-second-level">
                                 <li><a href="manager.php?action=add_product">Add Product</a></li>
                                 <li><a href="manager.php?action=view_product">View Product</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="arrow fa fa-angle-left"></i></a>
+                            <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="arrow fa fa-angle-down"></i></a>
                             <ul class ="left-sidebar-second-level">
                                 <li><a href="manager.php?action=add_cate">Add Categories</a></li>
                                 <li><a href="manager.php?action=view_cate">View Categories</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-gift"></i>&nbsp;Admin<i class="arrow fa fa-angle-down"></i></a>
+                            <ul class ="left-sidebar-second-level">
+                                <li><a href="manager.php?action=view_user">Danh sách thành viên</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -77,6 +84,21 @@
                             case 'view_product':
                                 include_once 'view_product.php';
                                 break;
+                            case 'edit_product':
+                                include_once 'edit_product.php';
+                                break;
+                            case 'add_cate':
+                                include_once 'insert_category.php';
+                                break;
+                            case 'view_cate':
+                                    include_once 'view_category.php';
+                                break;
+                            case 'edit_cate':
+                                    include_once 'edit_category.php';
+                            break;
+                            case 'view_user':
+                                include_once 'view_user.php';
+                            break;
                         }
                     ?>
                 </div>
