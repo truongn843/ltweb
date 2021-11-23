@@ -19,7 +19,14 @@
                 <select name="product-cate">
                     <option>Select a category</option>
                     <?php
-                        // code BE or list option directly
+                        // code BE to get all categories
+                        // $get_cate = "select * from table_name";
+                        // $run_cate = mysqli_query($con, $get_cate);
+                        // while($row_cate = mysqli_fetch_array($run_cate)) {
+                        //     $cate_id = $row_cate['cate_id'];
+                        //     $cate_title = $row_cate['cate_title'];
+                        //     echo "<option value='$cate_id'>$cate_title</option>";
+                        // }
                         
                     ?>
                 </select>
@@ -31,7 +38,7 @@
                 <select name="product-cate">
                     <option>Select a Brand</option>
                     <?php
-
+                        // code BE to get all brand
                     ?>
                 </select>
             </td>

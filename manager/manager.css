@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    /* border: 0; */
     /* vertical-align: baseline; */
 }
 
@@ -124,6 +124,7 @@ ul.dropdown-navbar-right ul li:hover {
     margin-left: 20px;
 }
 
+/* Add Product */
 .border-bottom {
     border-bottom: 0.1px solid rgba(0, 0, 0, 0.2) ;
     margin: 10px 0;
@@ -160,4 +161,20 @@ ul.dropdown-navbar-right ul li:hover {
     border: 0.01px solid rgba(28, 130, 199, 0.8);
     color: white;
     margin-top: 10px;
+}
+
+/* End Add Product */
+
+/* View Product */
+.search-bar {
+    float: right;
+    margin-bottom: 15px;
+}
+
+.search-bar input[type=text] {
+    padding: 3px 7px;
+}
+
+.view-product-box th, .view-product-box td {
+    text-align: left;
 }

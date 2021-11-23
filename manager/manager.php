@@ -74,7 +74,9 @@
                             case 'add_product':
                                 include_once 'insert_product.php';
                                 break;
-
+                            case 'view_product':
+                                include_once 'view_product.php';
+                                break;
                         }
                     ?>
                 </div>
