@@ -35,7 +35,6 @@
         global $db;
         $sql_cmd = "INSERT into rating (username, product_id, review, comment) values ('$usr', '$product_id', '$review', '$cmt')";
         $sql = mysqli_query($db, $sql_cmd);
-        mysqli_close($db);
         return 0;
     }
 ?>

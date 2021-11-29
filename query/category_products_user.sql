@@ -23,7 +23,7 @@ CREATE TABLE products
 (
 	product_id INT not null AUTO_INCREMENT,
 	product_title varchar (255) NOT NULL,
-	product_price decimal(10,2) NOT NULL,
+	product_price int NOT NULL,
 	product_image VARCHAR(255) NOT NULL,
 	product_desc VARCHAR(255) NOT NULL,
 	product_category INT not null,
@@ -94,22 +94,11 @@ on user for each row
 	INSERT into user_profile
 	VALUES (NEW.email, NEW.name, NEW.username, null, null, 'user-icon.png', null);
 
-CREATE TABLE cart
-(
-	product_id int NOT NULL,
-	quantity int NOT NULL,
-	username char(20) NOT NULL,
-	address varchar(250),
-	phonenumber char(11),
-	PRIMARY KEY(username, product_id),
-	foreign key(product_id) REFERENCES products(product_id)
-);
-
 create table rating
 (
 	rate_id INT NOT NULL AUTO_INCREMENT,
 	username varchar(100) not null,
-	product_id char(5) not null,
+	product_id int not null,
 	review char(8) not null,
 	comment varchar(255) not null,
 	primary key(rate_id),
@@ -132,3 +121,23 @@ INSERT into rating(username, product_id, review, comment)
 VALUES ('vi', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
 VALUES ('truong', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+
+
+CREATE TABLE cart
+(
+	product_id int NOT NULL,
+	quantity int NOT NULL,
+	username char(20) NOT NULL,
+	status char(10) not null,
+	PRIMARY KEY(username, product_id),
+	foreign key(product_id) REFERENCES products(product_id)
+);
+
+insert into cart
+values (1, 1, 'vi', 'Unpaid');
+insert into cart
+values (2, 2, 'vi', 'Paid');
+insert into cart
+values (3, 1, 'vi', 'Paid');
+insert into cart
+values (4, 1, 'vi', 'Unpaid');

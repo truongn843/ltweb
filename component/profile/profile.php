@@ -2,6 +2,7 @@
 <?php
     $user = $_SESSION['user'];
     $user_info = get_user_profile($user);
+    $user_carts = get_user_paid_cart($user);
     $invalid = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         if(isset($_POST['update_profile'])){
@@ -124,21 +125,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($user_carts as $cart) :?>
                     <tr>
-                        <td>001</td>
-                        <td>Áo thun cổ tròn (xanh lá) x 1</td>
-                        <td class="total-price">185000</td>
+                        <td><?php echo $cart['product_id'];?></td>
+                        <td><?php echo $cart['product_title'] . " x " . $cart['quantity'];?></td>
+                        <td class="total-price"><?php echo $cart['total_price'];?></td>
                         <td>Đang vận chuyển</td>
                     </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>
-                            Áo thun cổ tròn (xanh lá) x 1 <br/>
-                            Áo thun cổ tròn (trắng) x 1
-                        </td>
-                        <td class="total-price">370000</td>
-                        <td>Đang vận chuyển</td>
-                    </tr>
+                    <?php endforeach;?>
                 </tbody>
             </table>
         </div>

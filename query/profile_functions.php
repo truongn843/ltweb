@@ -16,7 +16,6 @@ function update_profile($user, $name, $addr, $pnumber, $avatar, $gender){
     $sql_cmd = "UPDATE user_profile set name = '$name', address = '$addr', phonenumber = '$pnumber', avatar = '$avatar', gender = '$gender' where username = '$user'";
     $sql = mysqli_query($db, $sql_cmd);
     
-    mysqli_close($db);
     return 0;
 }
 function password_checker($user, $password){
@@ -35,7 +34,6 @@ function update_password($user, $password){
     $sql_cmd = "UPDATE user set password = '$password' where username = '$user'";
     $sql = mysqli_query($db, $sql_cmd);
     
-    mysqli_close($db);
     return 0;
 }
 ?>

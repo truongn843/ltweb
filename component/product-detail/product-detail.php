@@ -10,6 +10,17 @@ $id = intval($_GET['id']);
 $product_detail = get_product_detail($id);
 $images = explode(" ", $product_detail['product_image']);
 $comments = get_comment($id);
+
+$usr = $_SESSION['user'];
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(cart_checker($usr, $id) == 0)
+        add_to_cart($usr, $id);
+    else
+        update_cart($usr, $id);
+    echo '<script>alert("Thêm thành công, vui lòng vào giỏ hàng để thanh toán!");
+    </script>';
+    header("Refresh:0");
+}
 ?>
 <div class="detail-container">
     <div class="detail-col-1">
@@ -20,9 +31,6 @@ $comments = get_comment($id);
                     <img src='images/product/<?php echo $image; ?>' style='width: 100%;' />
                 </div>
                 <?php endforeach;?>
-                <div class="mySlides">
-                    <img src='images/product/1-2.jpg' style='width: 100%;' />
-                </div>
             </div>
             <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
             <a class="next" onclick='plusSlides(1)'>&#10095;</a>
@@ -30,7 +38,7 @@ $comments = get_comment($id);
     </div>
     <div class="detail-col-2">
         <div class="detail-name"><?php echo $product_detail['product_title'];?></div>
-        <form class="detail-info">
+        <form class="detail-info" method="post">
             <?php echo $product_detail['product_desc'];?> <br>
             <div class="size-input">
                 <input type="radio" id="size-s" value="S" name="size" checked />
@@ -49,8 +57,8 @@ $comments = get_comment($id);
                 <label for="size-xl"> XL </label>
             </div>
             </p>
-            <div class="price">185000</div>
-            <input type="submit" value="Thêm vào giỏ" />
+            <div class="price"><?php echo $product_detail['product_price']?></div>
+            <input type="submit" name="add2Cart" value="Thêm vào giỏ" />
         </form>
         <div class="detail-name">Mô tả sản phẩm</div>
         <p class="detail-info">

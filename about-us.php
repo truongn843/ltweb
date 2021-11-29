@@ -3,6 +3,7 @@
 <?php
     require_once("query/product_function.php");
     require_once("query/profile_functions.php");
+    require_once("query/cart_functions.php");
     require_once("query/new_account.php");
 ?>
 
