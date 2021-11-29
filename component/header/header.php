@@ -1,8 +1,16 @@
 <link rel="stylesheet" type="text/css" href="./component/header/header.css" />
 <?php 
+    $avatar = "user-icon.png";
     if(!isset($_SESSION)) session_start(); 
     $loggedIn = false;
-    if (isset($_SESSION['user'])) $loggedIn = true;
+    if (isset($_SESSION['user'])){
+        $loggedIn = true;
+        $user = $_SESSION['user'];
+        $user_profile = get_user_name_avatar($user);
+        $avatar = $user_profile['avatar'];
+    }
+
+    $categories = get_categories();
 ?>
 <div id="page-header">
     <div id="contact-bar">
@@ -15,7 +23,7 @@
             else echo '<a href="logout.php" class="btn-login btn-logout">Đăng xuất</a>';
         ?>
         <a href="user-profile.php">
-            <img src="images/user-icon.png" alt="" id="header-user"/>
+            <img src="images/<?php echo $avatar; ?>" alt="" id="header-user"/>
         </a>
         
         <a href="cart.php">
@@ -41,9 +49,9 @@
             <li class="dropdown-menu">
                 <a href="index.php">sản phẩm</a>
                 <div class="dropdown-content">
-                    <a href="category.php">Áo thun</a>
-                    <a href="category.php">Áo sơ mi</a>
-                    <a href="category.php">Quần jean</a>
+                    <?php foreach ($categories as $category):?>
+                    <a href="category.php" onclick="location.href=this.href+'?id='+<?php echo $category['cate_id'];?>;return false;"><?php echo $category['cate_title'];?></a>
+                    <?php endforeach; ?>
                 </div>
             </li>
             <li><a href="about-us.php">giới thiệu</a></li>

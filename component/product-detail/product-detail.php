@@ -2,15 +2,24 @@
 <?php
 if (!isset($_SESSION)) session_start();
 $loggedIn = false;
-if (isset($_SESSION['user'])) $loggedIn = true;
+if (isset($_SESSION['user'])){
+    $loggedIn = true;
+}
+
+$id = intval($_GET['id']);
+$product_detail = get_product_detail($id);
+$images = explode(" ", $product_detail['product_image']);
+$comments = get_comment($id);
 ?>
 <div class="detail-container">
     <div class="detail-col-1">
         <div class="slideshow-container">
             <div class="slideshow-inner">
+                <?php foreach ($images as $image): ?>
                 <div class="mySlides">
-                    <img src='images/product/1-1.jpg' style='width: 100%;' />
+                    <img src='images/product/<?php echo $image; ?>' style='width: 100%;' />
                 </div>
+                <?php endforeach;?>
                 <div class="mySlides">
                     <img src='images/product/1-2.jpg' style='width: 100%;' />
                 </div>
@@ -20,12 +29,9 @@ if (isset($_SESSION['user'])) $loggedIn = true;
         </div>
     </div>
     <div class="detail-col-2">
-        <div class="detail-name">Áo thun cổ tròn</div>
+        <div class="detail-name"><?php echo $product_detail['product_title'];?></div>
         <form class="detail-info">
-            <p><i>Chất liệu:</i> <strong> Cotton Compact 2S </strong></p>
-            <p><i>Phân loại:</i> Áo thun form rộng</p>
-            <p><i>Màu:</i> Xanh lá</p>
-            <p><i>Size:</i>
+            <?php echo $product_detail['product_desc'];?> <br>
             <div class="size-input">
                 <input type="radio" id="size-s" value="S" name="size" checked />
                 <label for="size-s"> S </label>
@@ -72,27 +78,18 @@ if (isset($_SESSION['user'])) $loggedIn = true;
                 <div class="review-content"></div>
             </div>'
         ?>
-        <div class="review">
-            <div class="review-avatar"><img src="images/user-icon.png" width="100%" /></div>
-            <div class="review-name">Nguyễn Văn A</div>
-            <div class="review-content">
-                <p><i>Chất lượng sản phẩm:</i> Tốt</p>
-                <p>
-                    Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.
-                </p>
-            </div>
-        </div>
-        <div class="review">
-            <div class="review-avatar"><img src="images/user-icon.png" width="100%" /></div>
-            <div class="review-name">Nguyễn Văn B</div>
-            <div class="review-content">
-                <p><i>Chất lượng sản phẩm:</i> Tốt</p>
-                <p>
-                    Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.
-                </p>
-            </div>
-        </div>
 
+                
+    <?php foreach ($comments as $comment): ?>    
+        <div class="review">
+            <div class="review-avatar"><img src="images/<?php echo $comment['avatar'];?>" width="100%" /></div>
+            <div class="review-name"><?php echo $comment['name'];?></div>
+            <div class="review-content">
+                <p><i>Chất lượng sản phẩm:</i><?php echo $comment['review'];?></p>
+                <p><?php echo $comment['comment'];?></p>
+            </div>
+        </div>
+    <?php endforeach;?>    
     </div>
 </div>
 </div>

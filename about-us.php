@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    require_once("query/product_function.php");
+    require_once("query/profile_functions.php");
+    require_once("query/new_account.php");
+?>
 
 <head>
     <meta charset="UTF-8">

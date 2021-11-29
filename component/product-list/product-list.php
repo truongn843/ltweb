@@ -1,25 +1,17 @@
 <link rel="stylesheet" type="text/css" href="./component/product-list/product-list.css" />
+<?php
+    $products = get_products();
+?>
 <div id="product-container">
-    <a class="product-card" href="detail.php">
-        <img src="images/product/1-1.jpg" width=100%/>
-        <div class="product-name">Áo thun cổ tròn</div>
-        <div class="product-price">185000</div>
-    </a>
-    <a class="product-card" href="detail.php">
-        <img src="images/product/2-1.jpg" width=100%/>
-        <div class="product-name">Áo thun cổ tròn</div>
-        <div class="product-price">185000</div>
-    </a>
-    <a class="product-card" href="detail.php">
-        <img src="images/product/3-1.jpg" width=100%/>
-        <div class="product-name">Áo thun cổ tròn</div>
-        <div class="product-price">185000</div>
-    </a>
-    <a class="product-card" href="detail.php">
-        <img src="images/product/4-1.jpg" width=100%/>
-        <div class="product-name">Áo thun cổ tròn</div>
-        <div class="product-price">185000</div>
-    </a>
+    <?php foreach ($products as $product): ?>
+        <?php $images = $product['product_image'];
+            $image = explode(" ", $images);?>
+        <a class="product-card" href="detail.php" onclick="location.href=this.href+'?id='+<?php echo $product['product_id'];?>;return false;">
+            <img src="images/product/<?php echo $image[0]; ?>" width=100%/>
+            <div class="product-name"><?php echo $product['product_title']; ?></div>
+            <div class="product-price"><?php echo $product['product_price']; ?></div>
+        </a>
+    <?php endforeach; ?>
 </div>
 
 <script>

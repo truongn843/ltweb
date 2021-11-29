@@ -9,7 +9,7 @@
             $_SESSION['user'] = $user;
             $_SESSION['role'] = 'admin';
         }
-        else if ($user == 'member' && $pwd == 'member'){
+        else if (username_login_checker($user, $pwd) == 1){
             $_SESSION['user'] = $user;
             $_SESSION['role'] = 'member';
         }
