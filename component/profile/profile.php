@@ -1,9 +1,69 @@
 <link rel="stylesheet" type="text/css" href="./component/profile/profile.css" />
+<?php
+    $user = $_SESSION['user'];
+    $user_info = get_user_profile($user);
+    $invalid = false;
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(isset($_POST['update_profile'])){
+            $name = $_POST['fullname'];
+            $addr = $_POST['address'];
+            $pnumber = $_POST['phone'];
+            $gender = $_POST['gender'];
+            $avatar = $_POST['avatar'];
+            $invalid = false;
+            if (strlen($name) <= 0) {
+                $invalid = true; $errMsg = "Vui lòng nhập tên của bạn!";
+            }
+            else if (!preg_match("/[a-zA-Z ]+/", $name)) {
+                $invalid = true; $errMsg = "Vui lòng nhập tên của bạn!";
+            }
+            if (!preg_match("/[a-zA-Z0-9\.]+/", $addr)) {
+                $invalid = true; $errMsg = "Địa chỉ không hợp lệ.";
+            }
+            else if (!preg_match('/^[0-9]+$/', $pnumber) || strlen($pnumber) < 10 || strlen($pnumber) > 11) {
+                $invalid = true; $errMsg = "Số điện thoại không hợp lệ.";
+            }
+            if(!$invalid){
+                update_profile($user, $name, $addr, $pnumber, $avatar, $gender);
+                echo '<script>alert("Cập nhật thành công");
+                    </script>';
+                header("Refresh:0");
+            }
+        }
+        else if (isset($_POST['update_pwd'])){
+            $oldPwd = $_POST['oldpwd'];
+            $newPwd = $_POST['newpwd'];
+            $repeatNewPwd = $_POST['repeatNewpwd'];
+            $invalid = false;
+            if(strlen($oldPwd) <= 0){
+                $invalid = true; $errMsg = "Vui lòng nhập mật khẩu cũ!";
+            }
+            else if (password_checker($user, $oldPwd) == 0){
+                $invalid = true; $errMsg = "Mật khẩu cũ không chính xác!";
+            }
+    
+            if(strlen($newPwd) <= 0){
+                $invalid = true; $errMsg = "Vui lòng nhập mật khẩu mới!";
+            }
+            else if($newPwd != $repeatNewPwd) {
+                $invalid = true; $errMsg = "Mật khẩu mới và xác nhận mật khẩu không chính xác!";
+            }
+    
+            if(!$invalid){
+                update_password($user, $newPwd);
+                echo '<script>alert("Cập nhật thành công, vui lòng đăng nhập lại!");
+                        window.location="login.php";
+                      </script>';
+            }
+        }
+    }
+    
+?>
 <div class="profile-container">
     <div class="profile-col-1">
-        <img class="profile-avatar" src="images/user-icon.png" width="60%" />
-        <div class="profile-username">Nguyễn Hữu Trường</div>
-        <div class="profile-email">truongn843@gmail.com</div>
+        <img class="profile-avatar" src="images/<?php if($user_info['avatar'] != null) echo $user_info['avatar']; else echo "user-icon.png"; ?>" width="60%" />
+        <div class="profile-username"><?php echo $user_info['name'];?></div>
+        <div class="profile-email"><?php echo $user_info['email'];?></div>
         <div class="tab">
             <button class="tablinks active" onclick="switchProfileTab(0)">Cập nhật thông tin</button>
             <button class="tablinks" onclick="switchProfileTab(1)">Đổi mật khẩu</button>
@@ -14,40 +74,43 @@
     <div class="profile-col-2">
         <div class="tab-content active">
             <div class="tab-name">Cập nhật thông tin</div>
-            <form>
+            <form method="post">
                 <label>Tên người dùng:</label>
-                <input type="text" value="Nguyễn Hữu Trường" name="fullname" />
+                <input type="text" value="<?php echo $user_info['name'];?>" id="fullname" name="fullname" />
                 <label>Địa chỉ giao hàng:</label>
-                <input type="text" value="KTX Khu B ĐHQG, TP.HCM" name="address" />
+                <input type="text" value="<?php echo $user_info['address'];?>" id="address" name="address" />
                 <label>Số điện thoại:</label>
-                <input type="text" value="0333 444 555" name="phone" />
+                <input type="text" value="<?php echo $user_info['phonenumber'];?>" id="phone" name="phone" />
                 <label>Giới tính:</label><br />
                 <div class="radio-group">
-                    <input type="radio" value="male" id="male" name="gender" checked />
+                    <input type="radio" value="Nam" id="male" name="gender" checked/>
                     <span class="checkmark"></span>
                     <label for="male">Nam</label>
                 </div>
                 <div class="radio-group">
-                    <input type="radio" value="female" id="female" name="gender" />
+                    <input type="radio" value="Nữ" id="female" name="gender"/>
                     <span class="checkmark"></span>
                     <label for="female">Nữ</label>
                 </div><br />
                 <label>Ảnh đại diện:</label>
                 <input type="file" name="avatar" />
-                <input type="submit" value="Lưu thay đổi" class="submit-btn" />
+                <input type="submit" name="update_profile" value="Lưu thay đổi" class="submit-btn" />
             </form>
+            <div class="error_msg">
+                <?php if ($invalid) echo $errMsg ?>
+            </div>
         </div>
         <div class="tab-content">
             <div class="tab-name">Đổi mật khẩu</div>
-            <form>
+            <form method="post">
                 <label>Mật khẩu cũ:</label>
                 <input type="password" name="oldpwd" />
                 <label>Mật khẩu mới:</label>
                 <input type="password" name="newpwd" />
                 <label>Nhập lại mật khẩu mới:</label>
                 <input type="password" name="repeatNewpwd" />
-                <input type="submit" value="Đổi mật khẩu" class="submit-btn" />
-            </form>
+                <input type="submit" name="update_pwd" value="Đổi mật khẩu" class="submit-btn" />
+                </form>
         </div>
         <div class="tab-content">
             <div class="tab-name">Đơn hàng</div>
