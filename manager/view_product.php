@@ -1,6 +1,5 @@
 <?php
     include_once '../query/connect_to_server.php';
-    $images = explode(" ", $row['product_image']);
 ?>
 
 <div class="view-product-box">
@@ -29,6 +28,7 @@
 
                $i = 1;
                while($row=mysqli_fetch_array($all_products)) {
+                $images = explode(" ", $row['product_image']);
             ?>
 
             <tbody>
@@ -37,7 +37,7 @@
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['product_title']; ?></td>
                     <td><?php echo $row['product_price']; ?></td>
-                     <td> Image<!-- <img src="anh/ <?php echo $image[0]; ?>" width="70" height="50" > --> </td>
+                     <td> <img src="../images/product/<?php echo $images[0]; ?>" width="70" height="50" > </td>
                     
                     <td><?php// echo $row['date']; ?></td>
                     <td>

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         add_new_comment($user, $product_id, $review, $comment);
         echo '<script>alert("Đánh giá thành công");
             </script>';
-        //header("Refresh:0");
+        header("Refresh:0");
     }
 }
 ?>
