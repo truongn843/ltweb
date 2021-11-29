@@ -117,18 +117,18 @@ create table rating
 );
 
 INSERT into rating (username, product_id, review, comment)
-VALUES ('vi', '11111', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('vi', 1, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('truong', '11111', 'Rất tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('truong', 1, 'Rất tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('vi', '22222', 'Tạm', 'Cũng được.');
+VALUES ('vi', 2, 'Tạm', 'Cũng được.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('truong', '22222', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('truong', 2, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('vi', '33333', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('vi', 3, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('truong', '33333', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('truong', 3, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('vi', '44444', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('vi', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
 INSERT into rating(username, product_id, review, comment)
-VALUES ('truong', '44444', 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
+VALUES ('truong', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. Tương lai sẽ còn mua hàng ở đây.');
