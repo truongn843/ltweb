@@ -1,4 +1,5 @@
-
+<?php
+?>
 <div class="view-product-box">
     <h2>Xem sản phẩm</h2>
     <div class="border-bottom"></div>
@@ -36,7 +37,7 @@
                     <td><?php //echo $i; ?></td>
                     <td><?php echo $row['product_title']; ?></td>
                     <td><?php echo $row['product_price']; ?></td>
-                     <td> Image<!-- <img src="anh/ <?php// echo $row['product_image']; ?>" width="70" height="50" > --> </td>
+                     <td> Image<!-- <img src="anh/ <?php echo $image[0]; ?>" width="70" height="50" > --> </td>
                     
                     <td><?php// echo $row['date']; ?></td>
                     <td>
