@@ -1,5 +1,8 @@
 <?php
+    include_once '../query/connect_to_server.php';
+    $images = explode(" ", $row['product_image']);
 ?>
+
 <div class="view-product-box">
     <h2>Xem sản phẩm</h2>
     <div class="border-bottom"></div>
@@ -11,30 +14,27 @@
         <table width=100%>
             <thead>
                 <tr>
-                    <th><input type="checkbox" id="checkAll">Check</th>
+                    <th><input type="checkbox" style="display:none;" id="checkAll">Chọn</th>
                     <th>ID</th>
                     <th>Tên</th>
                     <th>Giá</th>
                     <th>Ảnh</th>
-                  
-                    <th>Ngày thêm</th>
-                    <th>Status</th>
                     <th>Xóa</th>
                     <th>Sửa</th>
                 </tr>
             </thead>
 
             <?php
-               // $all_products = mysqli_query($con, "select * from products order by product_id DESC")
+               $all_products = mysqli_query($db, "select * from products order by product_id ASC");
 
-               // $i = 1;
-               // while($row=mysqli_fetch_array($all_products)) {
+               $i = 1;
+               while($row=mysqli_fetch_array($all_products)) {
             ?>
 
             <tbody>
                 <tr>
                     <td><input type="checkbox" name="deleteAll[]" value="<?php echo $row['product_id']; ?>"></td>
-                    <td><?php //echo $i; ?></td>
+                    <td><?php echo $i; ?></td>
                     <td><?php echo $row['product_title']; ?></td>
                     <td><?php echo $row['product_price']; ?></td>
                      <td> Image<!-- <img src="anh/ <?php echo $image[0]; ?>" width="70" height="50" > --> </td>
@@ -47,10 +47,10 @@
                     <td><a href="manager.php?action=edit_product&product_id=<?php echo $row['product_id'];?>">Sửa</a></td>
                 </tr>
             </tbody>
-            <?php// $i++; }  //End While loop?> 
+            <?php  $i++; }  //End While loop?> 
 
             <tr>
-                <td><input type="submit" name="delete_all" value="Remove"></td>
+                <td><input type="submit" name="delete_all" value="Xóa"></td>
             </tr>
         </table>
 
@@ -61,7 +61,7 @@
 <?php
 // Delete Product -->
 if (isset($_GET['delete_product'])) {
-    $delete_product = mysqli_query($con, "delete from products where product_id = '$_GET[delete_product]' ");
+    $delete_product = mysqli_query($db, "delete from products where product_id = '$_GET[delete_product]' ");
 
     if ($delete_product) {
         echo "<script> alert('Sản phẩm đã được xóa thành công!') </script>";
@@ -76,7 +76,7 @@ if (isset($_POST['deleteAll'])) {
     $remove = $_POST['deleteAll'];
 
     foreach ($remove as $key) {
-        $run_remove = mysqli_query($con, "delete from products where product_id='$key'");
+        $run_remove = mysqli_query($db, "delete from products where product_id='$key'");
 
         if ($run_remove) {
             echo "<script> alert('Sản phẩm đã được xóa thành công!') </script>";
@@ -84,7 +84,7 @@ if (isset($_POST['deleteAll'])) {
             echo "<script> window.open('manager.php?action=view_product','_self') </script>";
         }
         else {
-            echo "<script> alert('Mysqli failed: mysqli_error($con)') </script>";
+            echo "<script> alert('Mysqli failed: mysqli_error($db)') </script>";
         }
         
     }

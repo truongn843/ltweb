@@ -12,27 +12,27 @@
     <div class="container">
         <div class="header">
             <div class="navbar-header">
-                <a class="admin-name" href="#">Admin Area - Hello ABC</a> 
+                <a class="admin-name" href="#">Admin Area</a> 
             </div>
 
             <div class="navbar-right-header">
                 <ul class="dropdown-navbar-right">
                     <li>
                         <a><i class="fa fa-user"> </i>&nbsp; <i class="fa fa-caret-down"></i></a>
-                        <ul class="subnavbar-right">
+                        <!-- <ul class="subnavbar-right">
                             <li> <a>User Account</a></li>
                             <li> <a>Logout</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                 </ul>
 
                 <ul class="dropdown-navbar-right">
                     <li>
                         <a><i class="fa fa-bell"> </i>&nbsp; <i class="fa fa-caret-down"></i></a>
-                        <ul class="subnavbar-right">
+                        <!-- <ul class="subnavbar-right">
                             <li> <a>Notification</a></li>
                          
-                        </ul>
+                        </ul> -->
                     </li>
                 </ul>
             </div>
@@ -43,22 +43,22 @@
                 <div class="left-sidebar-box">
                     <ul class="left-sidebar-first-level">
                         <li>
-                            <a href="#"><i class="fa fa-th-large"></i>&nbsp;Products <i class="arrow fa fa-angle-down"></i></a>
+                            <a href="#"><i class="fa fa-th-large"></i>&nbsp;Sản phẩm <i class="arrow fa fa-angle-down"></i></a>
                             <ul class ="left-sidebar-second-level">
-                                <li><a href="manager.php?action=add_product">Add Product</a></li>
-                                <li><a href="manager.php?action=view_product">View Product</a></li>
+                                <li><a href="manager.php?action=add_product">Thêm sản phẩm</a></li>
+                                <li><a href="manager.php?action=view_product">Danh sách sản phẩm</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-plus"></i>&nbsp;Categories<i class="arrow fa fa-angle-down"></i></a>
+                            <a href="#"><i class="fa fa-plus"></i>&nbsp;Danh mục<i class="arrow fa fa-angle-down"></i></a>
                             <ul class ="left-sidebar-second-level">
-                                <li><a href="manager.php?action=add_cate">Add Categories</a></li>
-                                <li><a href="manager.php?action=view_cate">View Categories</a></li>
+                                <li><a href="manager.php?action=add_cate">Thêm danh mục</a></li>
+                                <li><a href="manager.php?action=view_cate">Danh sách danh mục</a></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-gift"></i>&nbsp;Admin<i class="arrow fa fa-angle-down"></i></a>
+                            <a href="#"><i class="fa fa-gift"></i>&nbsp;Thành viên<i class="arrow fa fa-angle-down"></i></a>
                             <ul class ="left-sidebar-second-level">
                                 <li><a href="manager.php?action=view_user">Danh sách thành viên</a></li>
                             </ul>

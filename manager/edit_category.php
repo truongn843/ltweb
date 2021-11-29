@@ -1,12 +1,13 @@
 <?php
-    $edit_cate = mysqli_query($con, "select * from category where cate_id='$_GET[cate_id]'");
+    include_once '../query/connect_to_server.php';
+    $edit_cate = mysqli_query($db, "select * from category where cate_id='$_GET[cate_id]'");
 
-    $fetch_cate = mysql_fetch_array($edit_cate);
+    $fetch_cate = mysqli_fetch_array($edit_cate);
 ?>
 
 
 <div class="form-box">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
 
     <table align="center" width="100%">
         <tr >
@@ -32,24 +33,12 @@
 
 
 <?php
-    // if (isset($_POST['edit-product'])) {
-    //     $cate_title = $_POST['product-title'];
-    //     $product_cate = $_POST['product-cate'];
-    //     $product_price = $_POST['product-price'];
-    //     $product_desc = trim(mysqli_real_escape_string($con,$_POST['product-desc'])) ;
-        
-    //     // get image
-    //     $product_image = $_FILES['product-image']['name'];
-    //     $product_image_tmp = $_FILES['product-image']['tmp_name'];
-            // move_uploaded_file($product_image_tmp, "anh/$product_image"); // anh là thư mục chứa ảnh
-
-            // $insert_product = "insert into products (product_cate ....";
-    //     //values ('$product_cate', '$product_title', '$product_price', '$product_desc', )
-
-    //     $insert_pro = mysqli_query($con, $insert_product);
-
-    //     if ($insert_pro) {
-    //         echo "<script> alert('Thêm sản phẩm thành công') </script>"
-    //     }
-    // }
+    if (isset($_POST['edit-cate'])) {
+        $cate_title = mysqli_real_escape_string($db, $_POST['product-cate']);
+        $edit_cate = mysqli_query($db, "update category set cate_title = '$cate_title' where cate_id = '$_GET[cate_id]'");
+        if ($edit_cate) {
+            echo "<script> alert('Danh muc ddd thành công') </script>";
+            echo "<script> window.open(window.location.href,'_self')</script> ";
+        }
+    }
 ?>
