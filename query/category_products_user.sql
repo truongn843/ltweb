@@ -125,19 +125,20 @@ VALUES ('truong', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. T�
 
 CREATE TABLE cart
 (
+	cart_id int not null AUTO_INCREMENT,
 	product_id int NOT NULL,
 	quantity int NOT NULL,
 	username char(20) NOT NULL,
 	status char(10) not null,
-	PRIMARY KEY(username, product_id),
+	PRIMARY KEY(cart_id),
 	foreign key(product_id) REFERENCES products(product_id)
 );
 
 insert into cart
-values (1, 1, 'vi', 'Unpaid');
+values (1, 1, 1, 'vi', 'Unpaid');
 insert into cart
-values (2, 2, 'vi', 'Paid');
+values (2, 2, 2, 'vi', 'Paid');
 insert into cart
-values (3, 1, 'vi', 'Paid');
+values (3, 3, 1, 'vi', 'Paid');
 insert into cart
-values (4, 1, 'vi', 'Unpaid');
+values (4, 4, 1, 'vi', 'Unpaid');
