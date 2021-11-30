@@ -38,9 +38,9 @@
             ?>
             </span>
         </a>
-        <form method="post" name="sform" action="index.php?page_layout=danhsachtimkiem" id="header-search">
-            <input type="text" name="stext" placeholder="Tìm kiếm sản phẩm..."/>
-            <input type="submit" name="sbutton" value="" />
+        <form method="post" name="sform" action="/timkiem.php" id="header-search">
+            <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..."/>
+            <button type="submit" name="submit">Search</button>
         </form>
     </div>
     <div id="redirect-bar">
