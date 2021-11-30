@@ -1,6 +1,11 @@
 <link rel="stylesheet" type="text/css" href="./component/product-list/product-list.css" />
 <?php
-    $products = get_products();
+    if(!isset($_SESSION)) session_start();
+    $cate_id = 0;
+    if (isset($_SESSION['cate_id'])){
+        $cate_id = $_SESSION['cate_id'];
+    }
+    $products = get_products($cate_id);
 ?>
 <div id="product-container">
     <?php foreach ($products as $product): ?>

@@ -1,16 +1,26 @@
 <?php
     require_once('connect_to_server.php');
-    function get_products(){
+    function get_products($cate_id){
         global $db;
-        $sql_cmd = "SELECT * from products";
+        $sql_cmd = "SELECT * from products where product_category = '$cate_id'";
         $sql = mysqli_query($db, $sql_cmd);
-        return mysqli_fetch_all($sql, MYSQLI_ASSOC);
+        
+        $row = mysqli_num_rows($sql);
+        if($row)
+            return mysqli_fetch_all($sql, MYSQLI_ASSOC);
+        return 0;
     }
     function get_categories(){
         global $db;
         $sql_cmd = "SELECT * from category";
         $sql = mysqli_query($db, $sql_cmd);
         return mysqli_fetch_all($sql, MYSQLI_ASSOC);
+    }
+    function get_category_name($id){
+        global $db;
+        $sql_cmd = "SELECT cate_title from category where cate_id = '$id'";
+        $sql = mysqli_query($db, $sql_cmd);
+        return mysqli_fetch_array($sql, MYSQLI_ASSOC);
     }
     function get_product_detail($id){
         global $db;

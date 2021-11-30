@@ -24,12 +24,24 @@
         <hr /> Sản phẩm nổi bật
         <hr />
     </div>
-    <?php include('component/product-list/product-list.php'); ?>
+    <?php 
+    $cate_id = 1;
+    if(!isset($_SESSION)) session_start(); 
+    if(!isset($_SESSION['cate_id']) || $_SESSION['cate_id'] != $cate_id) {
+        $_SESSION['cate_id'] = $cate_id;
+    }
+    include('component/product-list/product-list.php'); ?>
     <div class="category">
         <hr /> Sản phẩm bán chạy
         <hr />
     </div>
-    <?php include('component/product-list/product-list.php'); ?>
+    <?php
+    $cate_id = 3;
+    if(!isset($_SESSION)) session_start(); 
+    if(!isset($_SESSION['cate_id']) || $_SESSION['cate_id'] != $cate_id) {
+        $_SESSION['cate_id'] = $cate_id;
+    }
+    include('component/product-list/product-list.php'); ?>
     <?php
     include_once('component/footer/footer.php');
     include_once('component/back-to-top/back-to-top.php');

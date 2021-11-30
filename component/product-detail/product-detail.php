@@ -11,15 +11,17 @@ $product_detail = get_product_detail($id);
 $images = explode(" ", $product_detail['product_image']);
 $comments = get_comment($id);
 
-$usr = $_SESSION['user'];
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(cart_checker($usr, $id) == 0)
-        add_to_cart($usr, $id);
-    else
-        update_cart($usr, $id);
-    echo '<script>alert("Thêm thành công, vui lòng vào giỏ hàng để thanh toán!");
-    </script>';
-    header("Refresh:0");
+if (isset($_SESSION['user'])){
+    $usr = $_SESSION['user'];
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(cart_checker($usr, $id) == 0)
+            add_to_cart($usr, $id);
+        else
+            update_cart($usr, $id);
+        echo '<script>alert("Thêm thành công, vui lòng vào giỏ hàng để thanh toán!");
+        </script>';
+        header("Refresh:0");
+    }
 }
 ?>
 <div class="detail-container">
