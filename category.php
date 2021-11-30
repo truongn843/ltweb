@@ -5,6 +5,14 @@
     require_once("query/profile_functions.php");
     require_once("query/cart_functions.php");
     require_once("query/new_account.php");
+    
+    $cate_id = intval($_GET['id']);
+    if(!isset($_SESSION)) session_start(); 
+    if(!isset($_SESSION['cate_id']) || $_SESSION['cate_id'] != $cate_id) {
+        $_SESSION['cate_id'] = $cate_id;
+    }
+    $cate_name = get_category_name($cate_id);
+    $products = get_products($cate_id)
 ?>
 
 <head>
@@ -22,10 +30,13 @@
     include_once('component/banner/banner.php');
     ?>
     <div class="category">
-        <hr /> Áo thun
+        <hr /> <?php echo $cate_name['cate_title'];?>
         <hr />
     </div>
-    <?php include('component/product-list/product-list.php'); ?>
+    <?php 
+    if($products != 0) include('component/product-list/product-list.php');
+    else
+        echo '<div class="category"><div><br><br>Không có sản phẩm nào ở đây.</div></div>'; ?>
     <?php
     include_once('component/footer/footer.php');
     include_once('component/back-to-top/back-to-top.php');
