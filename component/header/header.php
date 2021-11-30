@@ -9,7 +9,6 @@
         $user_profile = get_user_name_avatar($user);
         $avatar = $user_profile['avatar'];
     }
-
     $categories = get_categories();
 ?>
 <div id="page-header">
@@ -40,7 +39,7 @@
         </a>
         <form method="post" name="sform" action="/timkiem.php" id="header-search">
             <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..."/>
-            <button type="submit" name="submit">Search</button>
+            <button type="submit" name="submit">Tìm kiếm</button>
         </form>
     </div>
     <div id="redirect-bar">

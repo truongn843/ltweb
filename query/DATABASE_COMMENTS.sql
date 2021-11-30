@@ -38,6 +38,11 @@ INSERT INTO products
 VALUES(3, 'Áo thun cổ tròn (Xanh lá)', 185000, '3-1.jpg 3-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Áo thun form rộng<br>Màu: Xanh lá<br>', 1);
 INSERT INTO products
 VALUES(4, 'Áo thun cổ tròn (Vàng)', 185000, '4-1.jpg 4-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Áo thun form rộng<br>Màu: Vàng<br>', 1);
+insert into products values (5, 'Quần jean (nữ)', 210000, '5-1.jpg 5-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Quần jean nữ<br>Màu: xanh dương<br>', 3);
+insert into products values (6, 'Quần jean (nam)', 210000, '6-1.jpg 6-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Quần jean nam<br>Màu: xanh dương<br>', 3);
+insert into products values (7, 'Quần soóc jean (nữ)', 140000, '7-1.jpg 7-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Quần jean nữ<br>Màu: xanh dương<br>', 3);
+insert into products values (8, 'Quần soóc jean (nam)', 240000, '8-1.jpg 8-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Quần jean nam<br>Màu: xanh dương<br>', 3);
+insert into products values (9, 'Váy jean (nữ)', 190000, '9-1.jpg 9-2.jpg','Chất liệu: Cotton Compact 2S<br>Phân loại: Quần jean nữ<br>Màu: xanh dương<br>', 3);
 
 CREATE TABLE user
 (
