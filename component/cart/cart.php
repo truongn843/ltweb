@@ -26,13 +26,15 @@
         }
         $value = 'i'. $cart['cart_id'];
         if(isset($_POST[$value])){
-            $quantity = $_POST['cart1'] + 1;
+            $quantity_id = 'cart'. $cart['cart_id'];
+            $quantity = $_POST[$quantity_id] + 1;
             update_quantity($cart['cart_id'], $quantity);
             header("Refresh:0");
         }
         $value = 'd'. $cart['cart_id'];
         if(isset($_POST[$value])){
-            $quantity = $_POST['cart1'];
+            $quantity_id = 'cart'. $cart['cart_id'];
+            $quantity = $_POST[$quantity_id];
             if($quantity > 1){
                 $quantity--;
                 update_quantity($cart['cart_id'], $quantity);
