@@ -11,6 +11,13 @@
     }
 
     $categories = get_categories();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!empty($_POST['stext'])){
+            $_SESSION["keyword"] = $_POST['stext'];
+            header("Location: search-result.php");
+        }
+    }
 ?>
 <div id="page-header">
     <div id="contact-bar">
@@ -38,7 +45,7 @@
             ?>
             </span>
         </a>
-        <form method="post" name="sform" action="index.php?page_layout=danhsachtimkiem" id="header-search">
+        <form method="POST" name="sform" id="header-search">
             <input type="text" name="stext" placeholder="Tìm kiếm sản phẩm..."/>
             <input type="submit" name="sbutton" value="" />
         </form>

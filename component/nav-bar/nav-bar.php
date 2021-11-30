@@ -1,4 +1,13 @@
 <link rel="stylesheet" type="text/css" href="./component/nav-bar/nav-bar.css" />
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST['stext'])){
+        if(!isset($_SESSION)) session_start(); 
+        $_SESSION["keyword"] = $_POST['stext'];
+        header("Location: search-result.php");
+    }
+}
+?>
 <div id="navi-bar-container">
 <div id="navi-bar">
     <a href="index.php">
