@@ -34,7 +34,7 @@ require_once("query/new_account.php");
         <br/><br/>
         Đặc biệt, hiện nay, shop đang hợp tác cùng với các xưởng thời trang công sở đặt may quần áo công sở theo số đo của quý khách và in áo đồng phục, áo nhóm số lượng lớn.
         <br/><br/>
-        Tuy Shop Thời Trang Love Tree hiện chủ yếu chỉ bán hàng online nhưng luôn luôn đảm bảo uy tín và chất lượng sản phẩm (Nếu trong quá trình mua - bán hàng xảy ra lỗi từ phía shop, chúng tôi sẽ hoàn trả tiền và bồi thường thiệt hại cho quý khách)
+        Tuy Bách Khoa Clothes hiện chủ yếu chỉ bán hàng online nhưng luôn luôn đảm bảo uy tín và chất lượng sản phẩm (Nếu trong quá trình mua - bán hàng xảy ra lỗi từ phía shop, chúng tôi sẽ hoàn trả tiền và bồi thường thiệt hại cho quý khách)
     </p>
     <?php
     include_once('component/footer/footer.php');
