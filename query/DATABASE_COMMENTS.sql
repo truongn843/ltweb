@@ -66,7 +66,7 @@ VALUES
 	(3, 'thenguyen@gmail.com', 'Nguyen', 'nguyen','0643456389', '310dcbbf4cce62f762a2aaa148d556bd');
 INSERT INTO user
 VALUES
-	(4, 'khoanguyen@gmail.com', 'Khoa', 'khoa', '0143438782', '9a3e61b6bcc8abec08f195526c3132d5a4a98cc0');
+	(4, 'khoanguyen@gmail.com', 'Khoa', 'khoa', '0143438782', '550a141f12de6341fba65b0ad0433500');
 
 CREATE TABLE user_profile
 (
