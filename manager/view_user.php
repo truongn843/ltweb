@@ -35,7 +35,7 @@
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><?php echo $row['phone']; ?></td>
+                    <td><?php echo $row['phonenumber']; ?></td>
                     <td> <a href="manager.php?action=view_user&delete_user=<?php echo $row['user_id'];?>">Xóa</a> </td>
 
                 </tr>

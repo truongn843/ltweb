@@ -37,7 +37,7 @@
         $cate_title = mysqli_real_escape_string($db, $_POST['product-cate']);
         $edit_cate = mysqli_query($db, "update category set cate_title = '$cate_title' where cate_id = '$_GET[cate_id]'");
         if ($edit_cate) {
-            echo "<script> alert('Danh muc ddd thành công') </script>";
+            echo "<script> alert('Danh muc được cập nhật thành công') </script>";
             echo "<script> window.open(window.location.href,'_self')</script> ";
         }
     }
