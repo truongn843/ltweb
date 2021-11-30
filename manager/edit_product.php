@@ -2,6 +2,7 @@
     include_once '../query/connect_to_server.php';
     $edit_product = mysqli_query($db, "select * from products where product_id='$_GET[product_id]'");
     $fetch_edit = mysqli_fetch_array($edit_product);
+    $product_img = explode(" ", $fetch_edit['product_image']);
 ?>
 
 <div class="form-box">
@@ -49,7 +50,7 @@
             <td>
                 <input type="file" name="product_image">
                 <div class="edit_image">
-                    <img src="../images/product/<?php echo $fetch_edit['product_image']; ?>" width ="100" height = "70">
+                    <img src="../images/product/<?php echo $product_img[0]; ?>" width ="100" height = "70">
                 </div>
             </td>
         </tr>
