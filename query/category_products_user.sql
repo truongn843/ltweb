@@ -46,22 +46,22 @@ CREATE TABLE user
 	name VARCHAR(255) NOT NULL,
 	username char(20) NOT NULL,
 	phonenumber VARCHAR(10) NOT NULL,
-	password char(20) NOT NULL,
+	password varchar(100) NOT NULL,
 	PRIMARY KEY(user_id)
 );
 
 INSERT INTO user
 VALUES
-	(1, 'vitran@gmail.com', 'Vi', 'vi','0123456789', '111');
+	(1, 'vitran@gmail.com', 'Vi', 'vi','0334567819', '698d51a19d8a121ce581499d7b701668');
 INSERT INTO user
 VALUES
-	(2, 'truongnguyen@gmail.com', 'Truong', 'truong','016346789', '222');
+	(2, 'truongnguyen@gmail.com', 'Truong', 'truong','016346789', 'bcbe3365e6ac95ea2c0343a2395834dd');
 INSERT INTO user
 VALUES
-	(3, 'thenguyen@gmail.com', 'Nguyen', 'nguyen','0643456389', '333');
+	(3, 'thenguyen@gmail.com', 'Nguyen', 'nguyen','0643456389', '310dcbbf4cce62f762a2aaa148d556bd');
 INSERT INTO user
 VALUES
-	(4, 'khoanguyen@gmail.com', 'Khoa', 'khoa', '0143438782', '444');
+	(4, 'khoanguyen@gmail.com', 'Khoa', 'khoa', '0143438782', '9a3e61b6bcc8abec08f195526c3132d5a4a98cc0');
 
 CREATE TABLE user_profile
 (
@@ -125,19 +125,20 @@ VALUES ('truong', 4, 'Tốt', 'Áo mặc rất đẹp, nhân viên rep nhanh. T�
 
 CREATE TABLE cart
 (
+	cart_id int not null AUTO_INCREMENT,
 	product_id int NOT NULL,
 	quantity int NOT NULL,
 	username char(20) NOT NULL,
 	status char(10) not null,
-	PRIMARY KEY(username, product_id),
+	PRIMARY KEY(cart_id),
 	foreign key(product_id) REFERENCES products(product_id)
 );
 
 insert into cart
-values (1, 1, 'vi', 'Unpaid');
+values (1, 1, 1, 'vi', 'Unpaid');
 insert into cart
-values (2, 2, 'vi', 'Paid');
+values (2, 2, 2, 'vi', 'Paid');
 insert into cart
-values (3, 1, 'vi', 'Paid');
+values (3, 3, 1, 'vi', 'Paid');
 insert into cart
-values (4, 1, 'vi', 'Unpaid');
+values (4, 4, 1, 'vi', 'Unpaid');

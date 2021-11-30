@@ -20,7 +20,8 @@ function update_profile($user, $name, $addr, $pnumber, $avatar, $gender){
 }
 function password_checker($user, $password){
     global $db;
-    $sql_cmd = "SELECT * from user where username = '$user' and password = '$password'";
+    $md5_pswd = md5($password);
+    $sql_cmd = "SELECT * from user where username = '$user' and password = '$md5_pswd'";
     $sql = mysqli_query($db, $sql_cmd);
     
     $row = mysqli_num_rows($sql);
@@ -31,7 +32,8 @@ function password_checker($user, $password){
 }
 function update_password($user, $password){
     global $db;
-    $sql_cmd = "UPDATE user set password = '$password' where username = '$user'";
+    $md5_pswd = md5($password);
+    $sql_cmd = "UPDATE user set password = '$md5_pswd' where username = '$user'";
     $sql = mysqli_query($db, $sql_cmd);
     
     return 0;

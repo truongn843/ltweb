@@ -16,6 +16,30 @@
         </script>';
         header("Refresh:0");
     }
+    foreach ($user_carts as $cart){
+        $name = 'abc' . $cart['cart_id'];
+        if(isset($_POST[$name])){
+            remove_cart($cart['cart_id']);
+            echo '<script>alert("Xóa sản phẩm thành công!");
+            </script>';
+            header("Refresh:0");
+        }
+        $value = 'i'. $cart['cart_id'];
+        if(isset($_POST[$value])){
+            $quantity = $_POST['cart1'] + 1;
+            update_quantity($cart['cart_id'], $quantity);
+            header("Refresh:0");
+        }
+        $value = 'd'. $cart['cart_id'];
+        if(isset($_POST[$value])){
+            $quantity = $_POST['cart1'];
+            if($quantity > 1){
+                $quantity--;
+                update_quantity($cart['cart_id'], $quantity);
+                header("Refresh:0");
+            }
+        }
+    }
 ?>
 <div class="cart">
     <div class="cart-product">
@@ -31,22 +55,35 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($user_carts as $cart) :?>
+                <?php $c_id = 0;
+                 foreach ($user_carts as $cart) :?>
                 <?php $images = explode(" ", $cart['product_image']);?>
                 <tr>
-                    <td><div class="rmv-btn"><img src="images/x-icon.png" width="100%"/></div></td>
                     <td>
+                    <form method="POST">
+                        <button class="rmv-btn" name="<?php echo 'abc'.$cart['cart_id'];?>" type="submit"><img src="images/x-icon.png" width="100%" /></button>
+                    </form>
+                    </td>
+                    
+                                    
+                    <td>
+                    <form method="POST">
                         <div class="item-img"><img src="images/product/<?php echo $images[0];?>" width="100%"/></div>
                         <div class="item-name"><?php echo $cart['product_title'];?></div>
                     </td>
                     <td class="price center"><?php echo $cart['product_price'];?></td>
                     <td class="center">
-                        <button class="quantity-btn">-</button>
+                        
+                    <form method="POST">
+                        <input type="hidden" name="<?php echo 'cart'.$cart['cart_id'];?>" value="<?php echo $cart['quantity'];?>"/>
+                        <button type="submit" name="<?php echo 'd'.$cart['cart_id'];?>" class="quantity-btn">-</button>
                         <span class="quantity"><?php echo $cart['quantity'];?></span>
-                        <button class="quantity-btn">+</button>
+                        <button type="submit" name="<?php echo 'i'.$cart['cart_id'];?>" class="quantity-btn">+</button>
+                    </form>
                     </td>
                     <td class="price center"><?php echo $cart['total_price'];?></td>
                 </tr>
+                <?php $c_id++;?>
                 <?php endforeach;?>
             </tbody>
         </table>
