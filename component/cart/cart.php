@@ -74,7 +74,10 @@
             <span class="float-left"><strong>Tổng</strong></span>
             <span class="price float-right"><?php echo $payment_price;?></span>
         </div>
-        <button class="cart-btn" id="order" name="order">Đặt hàng</button>
+        <form method="POST">
+            <input class="cart-btn" id="order" name="order" value="Đặt hàng" type="submit" />
+        </form>
+        
     </div>
 </div>
 <script>
