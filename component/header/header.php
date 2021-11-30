@@ -10,6 +10,13 @@
         $avatar = $user_profile['avatar'];
     }
     $categories = get_categories();
+
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        if (!empty($_GET['search'])){
+            $_SESSION['search_keyword'] = $_GET['search'];
+            header("Location: search-result.php");
+        }
+    }
 ?>
 <div id="page-header">
     <div id="contact-bar">
@@ -37,9 +44,9 @@
             ?>
             </span>
         </a>
-        <form method="post" name="sform" action="/timkiem.php" id="header-search">
+        <form method="get" name="sform" id="header-search">
             <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..."/>
-            <button type="submit" name="submit">Tìm kiếm</button>
+            <input type="submit" name="submit" value="" />
         </form>
     </div>
     <div id="redirect-bar">

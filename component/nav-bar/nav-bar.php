@@ -1,4 +1,13 @@
 <link rel="stylesheet" type="text/css" href="./component/nav-bar/nav-bar.css" />
+<?php 
+    if(!isset($_SESSION)) session_start(); 
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        if (!empty($_GET['search'])){
+            $_SESSION['search_keyword'] = $_GET['search'];
+            header("Location: search-result.php");
+        }
+    }
+?>
 <div id="navi-bar-container">
 <div id="navi-bar">
     <a href="index.php">
@@ -19,8 +28,8 @@
         ?>
         </span>
     </a>
-    <form method="post" name="sform" action="index.php" id="navi-bar-search">
-        <input type="text" name="stext" placeholder="Tìm kiếm sản phẩm..."/>
+    <form method="get" name="sform" action="index.php" id="navi-bar-search">
+        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..."/>
         <input type="submit" name="sbutton" value="" />
     </form>
     
