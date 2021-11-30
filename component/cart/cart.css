@@ -37,6 +37,9 @@
     margin: auto;
     height: 30px;
     width: 30px;
+    border: none;
+    outline:none;
+    background: none;
 }
 .cart-product .item-img {
     display: inline-block;

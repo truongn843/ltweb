@@ -11,13 +11,6 @@
     }
 
     $categories = get_categories();
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (!empty($_POST['stext'])){
-            $_SESSION["keyword"] = $_POST['stext'];
-            header("Location: search-result.php");
-        }
-    }
 ?>
 <div id="page-header">
     <div id="contact-bar">
@@ -45,9 +38,9 @@
             ?>
             </span>
         </a>
-        <form method="POST" name="sform" id="header-search">
-            <input type="text" name="stext" placeholder="Tìm kiếm sản phẩm..."/>
-            <input type="submit" name="sbutton" value="" />
+        <form method="post" name="sform" action="/timkiem.php" id="header-search">
+            <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..."/>
+            <button type="submit" name="submit">Search</button>
         </form>
     </div>
     <div id="redirect-bar">
