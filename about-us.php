@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once("query/product_function.php");
-    require_once("query/profile_functions.php");
-    require_once("query/cart_functions.php");
-    require_once("query/new_account.php");
+require_once("query/product_function.php");
+require_once("query/profile_functions.php");
+require_once("query/cart_functions.php");
+require_once("query/new_account.php");
 ?>
 
 <head>
@@ -24,15 +24,17 @@
 
     <div class="label-name">Giới thiệu về chúng tôi</div>
     <p class="about-us">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin turpis sit amet tortor bibendum hendrerit. Etiam molestie purus eu ex ornare blandit. Nunc sed quam risus. Proin eget arcu sollicitudin, pellentesque nibh sed, condimentum nunc. Duis in imperdiet dolor. Donec molestie mauris et laoreet pretium. Maecenas convallis lobortis augue vitae efficitur. Fusce at libero at urna mattis vestibulum. Proin tristique, nisi at blandit pulvinar, tellus odio ullamcorper ligula, nec cursus neque risus quis urna.
+        Shop Thời Trang Bách Khoa Clothes với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng.
         <br/><br/>
-        Vivamus ac quam sit amet elit sagittis imperdiet. Morbi justo massa, feugiat quis ornare sed, ultricies id lorem. Praesent eget lectus nulla. Curabitur fringilla, ex quis molestie ullamcorper, lacus quam ultricies turpis, quis gravida lorem purus in urna. In sit amet arcu velit. Aenean mattis risus sit amet enim maximus, at sodales libero tincidunt. In nibh leo, dictum vel aliquam eu, ornare et nisi. Suspendisse eu velit sapien. Sed lobortis, dui non iaculis rutrum, lacus ante ornare turpis, eget euismod ex magna sed justo.
+        Shop Thời Trang Bách Khoa Clothes chuyên cung cấp:<br/><br/>
+        - Thời trang công sở<br/><br/>
+        - Thời trang nam, nơi<br/><br/>
+        - Thời trang cặp và đồng phục<br/><br/>
+        với nhiều mặt hàng đa dạng và phong phú như áo thun, áo sơ mi, áo vest, đầm, váy, quần jean, quần tây,.... sẽ là sự lựa chọn tốt nhất cho phong cách thời của các bạn.
         <br/><br/>
-        Ut aliquet ipsum felis, ut suscipit nibh pulvinar at. Morbi gravida rutrum ex quis malesuada. Integer eget vehicula dolor. Ut sed turpis mollis, commodo dolor a, molestie urna. Vestibulum vehicula et nulla eu ornare. Proin quis luctus neque, vel faucibus augue. Etiam condimentum aliquam ex sed placerat. Nam lacinia consectetur metus, at aliquam massa. Pellentesque laoreet massa diam. Nunc cursus, mauris a placerat cursus, tellus ex porta nunc, id scelerisque ligula est ut enim. Aliquam sed rutrum est, quis suscipit turpis. Aliquam urna mauris, maximus id nisl id, dictum porta libero. Donec commodo pharetra justo, quis malesuada velit eleifend at. Sed finibus ligula ac lacus pharetra congue.
+        Đặc biệt, hiện nay, shop đang hợp tác cùng với các xưởng thời trang công sở đặt may quần áo công sở theo số đo của quý khách và in áo đồng phục, áo nhóm số lượng lớn.
         <br/><br/>
-        Praesent vitae volutpat mauris. Phasellus vitae aliquet nulla. Sed id molestie velit. Aliquam erat volutpat. Sed ipsum felis, hendrerit in ultrices lacinia, eleifend ac risus. Etiam dapibus non tortor et semper. Aliquam ultrices turpis vitae magna venenatis viverra. Integer in tincidunt lectus.
-        <br/><br/>
-        Proin diam sem, sagittis at justo et, egestas eleifend sem. Curabitur consectetur velit auctor nisl consectetur interdum. Aliquam sit amet vulputate metus. Donec vel neque augue. Sed eget purus maximus, ullamcorper lectus id, eleifend neque. Sed justo massa, accumsan ac mattis vitae, sagittis porta elit. Ut nec ultricies lacus, nec porttitor mi. Nam eu tincidunt mauris. Duis at tristique leo. Maecenas sollicitudin at ligula in porttitor. Maecenas sit amet volutpat diam. Maecenas tincidunt ex a felis sodales facilisis. Ut ultrices tincidunt quam nec mollis. Morbi ac semper odio.
+        Tuy Shop Thời Trang Love Tree hiện chủ yếu chỉ bán hàng online nhưng luôn luôn đảm bảo uy tín và chất lượng sản phẩm (Nếu trong quá trình mua - bán hàng xảy ra lỗi từ phía shop, chúng tôi sẽ hoàn trả tiền và bồi thường thiệt hại cho quý khách)
     </p>
     <?php
     include_once('component/footer/footer.php');

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once("query/product_function.php");
-    require_once("query/profile_functions.php");
-    require_once("query/cart_functions.php");
-    require_once("query/new_account.php");
+require_once("query/product_function.php");
+require_once("query/profile_functions.php");
+require_once("query/cart_functions.php");
+require_once("query/new_account.php");
 ?>
 
 <head>
@@ -24,15 +24,16 @@
 
     <div class="label-name">Liên hệ</div>
     <p class="about-us">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin turpis sit amet tortor bibendum hendrerit. Etiam molestie purus eu ex ornare blandit. Nunc sed quam risus. Proin eget arcu sollicitudin, pellentesque nibh sed, condimentum nunc. Duis in imperdiet dolor. Donec molestie mauris et laoreet pretium. Maecenas convallis lobortis augue vitae efficitur. Fusce at libero at urna mattis vestibulum. Proin tristique, nisi at blandit pulvinar, tellus odio ullamcorper ligula, nec cursus neque risus quis urna.
-        <br/><br/>
-        Vivamus ac quam sit amet elit sagittis imperdiet. Morbi justo massa, feugiat quis ornare sed, ultricies id lorem. Praesent eget lectus nulla. Curabitur fringilla, ex quis molestie ullamcorper, lacus quam ultricies turpis, quis gravida lorem purus in urna. In sit amet arcu velit. Aenean mattis risus sit amet enim maximus, at sodales libero tincidunt. In nibh leo, dictum vel aliquam eu, ornare et nisi. Suspendisse eu velit sapien. Sed lobortis, dui non iaculis rutrum, lacus ante ornare turpis, eget euismod ex magna sed justo.
-        <br/><br/>
-        Ut aliquet ipsum felis, ut suscipit nibh pulvinar at. Morbi gravida rutrum ex quis malesuada. Integer eget vehicula dolor. Ut sed turpis mollis, commodo dolor a, molestie urna. Vestibulum vehicula et nulla eu ornare. Proin quis luctus neque, vel faucibus augue. Etiam condimentum aliquam ex sed placerat. Nam lacinia consectetur metus, at aliquam massa. Pellentesque laoreet massa diam. Nunc cursus, mauris a placerat cursus, tellus ex porta nunc, id scelerisque ligula est ut enim. Aliquam sed rutrum est, quis suscipit turpis. Aliquam urna mauris, maximus id nisl id, dictum porta libero. Donec commodo pharetra justo, quis malesuada velit eleifend at. Sed finibus ligula ac lacus pharetra congue.
-        <br/><br/>
-        Praesent vitae volutpat mauris. Phasellus vitae aliquet nulla. Sed id molestie velit. Aliquam erat volutpat. Sed ipsum felis, hendrerit in ultrices lacinia, eleifend ac risus. Etiam dapibus non tortor et semper. Aliquam ultrices turpis vitae magna venenatis viverra. Integer in tincidunt lectus.
-        <br/><br/>
-        Proin diam sem, sagittis at justo et, egestas eleifend sem. Curabitur consectetur velit auctor nisl consectetur interdum. Aliquam sit amet vulputate metus. Donec vel neque augue. Sed eget purus maximus, ullamcorper lectus id, eleifend neque. Sed justo massa, accumsan ac mattis vitae, sagittis porta elit. Ut nec ultricies lacus, nec porttitor mi. Nam eu tincidunt mauris. Duis at tristique leo. Maecenas sollicitudin at ligula in porttitor. Maecenas sit amet volutpat diam. Maecenas tincidunt ex a felis sodales facilisis. Ut ultrices tincidunt quam nec mollis. Morbi ac semper odio.
+        Mọi thắc mắc, tư vấn và đóng góp ý kiến xin liên hệ với chúng tôi qua: <br/><br/>
+        Số điện thoại: 0973 285 886<br/><br/>
+        Facebook Fanpage: https://www.facebook.com/bkquocte<br/><br/>
+        Mail: web@hcmut.edu.vn<br/><br/>
+        Địa chỉ: 268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh<br/><br/>
+        Thành viên nhóm:<br/><br/>
+        - Nguyễn Hữu Trường<br/><br/>
+        - Trần Long Vĩ<br/><br/>
+        - Nguyễn Văn Khoa<br/><br/>
+        - Võ Thế Nguyên<br/><br/>
     </p>
     <?php
     include_once('component/footer/footer.php');

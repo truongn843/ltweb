@@ -96,6 +96,7 @@
     display: block;
     text-align: center;
     width: 97%;
+    border: 0;
     background-color: #f2f2f2;
     transition: all .2s ease;
 }
