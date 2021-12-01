@@ -3,7 +3,7 @@ require_once('connect_to_server.php');
 function signup_new_account($name, $user, $email, $pwd){
     global $db;
     $md5_pswd = md5($pwd);
-    $sql_cmd = "INSERT INTO user (email, name, username, password) VALUES ('$email', '$name', '$user', '$md5_pswd')";
+    $sql_cmd = "INSERT INTO user (email, name, username, password) VALUES ('$email', '$name', '$user', '$md5_pwd')";
     $sql = mysqli_query($db, $sql_cmd);
 }
 
